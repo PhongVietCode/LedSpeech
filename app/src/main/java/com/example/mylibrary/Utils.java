@@ -53,10 +53,10 @@ public class Utils {
 
     }
     public ArrayList<MyBook> getBook(){
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference myRef = database.getReference();
-//        myRef.child("book").child("newBook").setValue(bookName);
-//        Log.d(TAG, "getBook: ");
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference();
+        myRef.child("book").child("newBook").setValue("phong");
+        Log.d(TAG, "getBook: ");
         return books;
     }
     public MyBook getID(int id){

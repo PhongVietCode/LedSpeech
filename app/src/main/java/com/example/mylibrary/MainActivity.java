@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void checkBook(String text) {
         //todo: check data on database
-        Toast.makeText(this,"Update soon", Toast.LENGTH_SHORT).show();
+        Utils.getInstance().getBook();
 
     }
     private void initView() {

@@ -42,7 +42,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.txtBookNameAbove.setText(listBook.get(position).getBookName());
         holder.txtBookNameUnder.setText(listBook.get(position).getBookName());
 //        holder.txtBookPage.setText(toString(listBook.get(position).getBookPages()));
