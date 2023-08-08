@@ -1,26 +1,17 @@
 package com.example.mylibrary;
-
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
-import com.bumptech.glide.util.Util;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.ArrayList;
 
 public class Utils {
-    private String TAG = "Utils";
+    final private String TAG = "Utils";
     public String KEY_NAME = "name";
     public String KEY_AUTHOR = "author";
     private static ArrayList<MyBook> books;
@@ -53,11 +44,23 @@ public class Utils {
 
     }
     public ArrayList<MyBook> getBook(){
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
-        myRef.child("book").child("newBook").setValue("phong");
-        Log.d(TAG, "getBook: ");
+        MyBook book  = new MyBook(1,"happy life","Phongcute",1029,"url","happy will give u normal life");
+        db.collection("Book").document("book1")
+                .set(book)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d(TAG, "onSuccess: added a book");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });;
         return books;
+
     }
     public MyBook getID(int id){
         for(MyBook book:books){

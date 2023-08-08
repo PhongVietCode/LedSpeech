@@ -32,10 +32,8 @@ android {
 
 dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
-    //noinspection UseTomlInstead
+    implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-firestore")
-    implementation ("com.google.firebase:firebase-firestore-ktx:24.7.0")
-    implementation ("com.google.firebase:firebase-database-ktx:20.2.2")
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     implementation(libs.appcompat)
     implementation(libs.material)
