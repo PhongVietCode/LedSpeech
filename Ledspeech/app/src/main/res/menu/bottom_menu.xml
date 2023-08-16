@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Speech to text"
+        android:icon="@drawable/record_voice_over_48px"
+        android:enabled="true"
+        android:id="@+id/speechToText"/>
+    <item
+        android:title="Text to speech"
+        android:icon="@drawable/draft_orders_48px"
+        android:enabled="true"
+        android:id="@+id/textToSpeech"/>
+</menu>
